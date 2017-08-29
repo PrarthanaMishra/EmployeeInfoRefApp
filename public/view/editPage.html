@@ -1,0 +1,39 @@
+<html ng-app='employeeInfoApp'>
+
+<head>
+    <title>
+        Edit the values
+    </title>
+    <script src='..\libs\bower-angularjs\angular.min.js'>
+
+    </script>
+
+</head>
+
+<body ng-controller="employeeInfoController" ,ng-init="openEditModal(emp)">
+
+    <form ng-submit=" updateEmployee(ngDialogData,index,ngDialogData._id) ">
+        Name:<br>
+        <input type="text " ng-model="ngDialogData.name ">
+        <br> Department code:<br>
+        <input type="text " ng-model="ngDialogData.deptCode ">
+        <br> Department Name:<br>
+        <input type="text " ng-model="ngDialogData.deptName ">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        </table>
+
+        </script>
+        <script src='\app.js'>
+
+        </script>
+        <script src='\controller\controller.js'>
+
+        </script>
+        <script src='\service\service.js'>
+
+        </script>
+</body>
+
+</html>

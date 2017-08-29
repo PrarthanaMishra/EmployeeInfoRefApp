@@ -1,0 +1,58 @@
+<html ng-app='employeeInfoApp'>
+
+<head>
+    <title> Mean learner </title>
+    <script src='..\libs\bower-angularjs\angular.min.js'>
+
+    </script>
+    <link rel="stylesheet" href="../libs/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="../libs/ng-dialog/css/ngDialog-theme-default.min.css">
+    <script src="../libs/ng-dialog/js/ngDialog.min.js"></script>
+
+</head>
+
+<body ng-controller="employeeInfoController">
+    <form ng-submit="createEmpInfo(employeeData)">
+        Name:<br>
+        <input type="text" ng-model="employeeData.name">
+        <br> Department code:<br>
+        <input type="text" ng-model="employeeData.deptCode">
+        <br> Department Name:<br>
+        <input type="text" ng-model="employeeData.deptName">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <button ng-click="getEmployeeList()">Click to get the recent employees list</button>
+    <h1> Employee List</h1>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>DeptCode</td>
+            <td>DeptName</td>
+
+        </tr>
+        <tr ng-repeat="employee in employeeList">
+            <td> {{employee.name}} </td>
+            <td>{{employee.deptCode}} </td>
+            <td>{{employee.deptName}} </td>
+            <td>
+                <button ng-click="removeEmployee(employee._id, $index)"> Delete </button>
+            </td>
+            <td>
+                <button ng-click="openEditModal(employee, $index)">update</button>
+            </td>
+        </tr>
+        <script src='\app.js'>
+
+        </script>
+        <script src='\controller\controller.js'>
+
+        </script>
+        <script src='\service\service.js'>
+
+        </script>
+
+</body>
+
+</html>
